@@ -1,149 +1,268 @@
-.trekking-navbar {
+/*=============================
+ Premium Navbar
+==============================*/
 
-  background: #ffffff;
+.trekking-navbar{
 
-  min-height: 78px;
+    position: fixed;
+    top:0;
+    left:0;
 
-  padding: 10px 0;
+    width:100%;
+    z-index:999;
 
-  box-shadow: 0 4px 18px rgba(7,26,43,0.12);
+    padding:22px 0;
 
+    transition:.45s ease;
+
+    background:transparent;
+}
+
+/* after scrolling */
+
+.trekking-navbar.scrolled{
+
+    background:rgba(255,255,255,.86);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    box-shadow:0 10px 35px rgba(0,0,0,.08);
+
+    padding:12px 0;
 }
 
 
-/* Logo */
-.logo {
+/*==============================
+ Logo
+===============================*/
 
-  width: 190px;
+.logo{
 
-  height: auto;
+    height:62px;
 
-  object-fit: contain;
+    transition:.4s;
+}
 
+.trekking-navbar.scrolled .logo{
+
+    height:50px;
 }
 
 
+/*===============================
+ Menu
+================================*/
 
-/* Navigation Links */
+.navbar-nav{
 
-.nav-link {
-
-  color: #071A2B !important;
-
-  font-weight: 600;
-
-  font-size: 15px;
-
-  margin: 0 12px;
-
-  transition: all 0.3s ease;
-
-
-  &:hover,
-  &.active {
-
-    color: #FF7A00 !important;
-
-  }
-
+    gap:18px;
 }
 
 
+.nav-link{
 
-/* Dropdown */
+    position:relative;
 
-.dropdown-menu {
+    color:#fff !important;
 
-  border: none;
+    font-size:15px;
 
-  border-radius: 14px;
+    font-weight:600;
 
-  padding: 10px;
+    letter-spacing:.5px;
 
-  box-shadow: 0 12px 35px rgba(7,26,43,0.18);
+    text-transform:uppercase;
 
+    transition:.35s;
+
+    padding:12px 8px !important;
 }
 
 
+.trekking-navbar.scrolled .nav-link{
 
-.dropdown-item {
-
-  color: #071A2B;
-
-  font-weight: 500;
-
-  padding: 10px 18px;
-
-  border-radius: 8px;
-
-
-  &:hover {
-
-    background: #071A2B;
-
-    color: #ffffff;
-
-  }
-
+    color:#202020 !important;
 }
 
 
+/* underline animation */
 
-/* Search */
+.nav-link::after{
 
-.search-box {
+    content:"";
 
+    position:absolute;
 
-  input {
+    left:0;
 
-    width: 240px;
+    bottom:6px;
 
-    height: 42px;
+    width:0;
 
-    border-radius: 25px;
+    height:2px;
 
-    border: 1px solid #d7dce2;
+    background:#C89B3C;
 
-    padding: 0 18px;
+    transition:.35s;
+}
 
-    color: #071A2B;
+.nav-link:hover::after{
 
+    width:100%;
+}
 
-    &:focus {
+.nav-link:hover{
 
-      border-color: #FF7A00;
-
-      box-shadow: 0 0 0 3px rgba(255,122,0,0.15);
-
-    }
-
-  }
-
-
-
-  button {
-
-    background: #FF7A00;
-
-    color: white;
-
-    border: none;
-
-    border-radius: 25px;
-
-    padding: 10px 25px;
-
-    font-weight: 600;
-
-    transition: 0.3s;
+    color:#C89B3C !important;
+}
 
 
-    &:hover {
+/*===========================
+ Dropdown
+============================*/
 
-      background: #071A2B;
+.dropdown-menu{
 
-    }
+    border:none;
 
-  }
+    border-radius:18px;
 
+    overflow:hidden;
+
+    padding:10px;
+
+    margin-top:18px;
+
+    box-shadow:0 18px 45px rgba(0,0,0,.12);
+}
+
+
+.dropdown-item{
+
+    border-radius:12px;
+
+    padding:12px 18px;
+
+    transition:.3s;
+}
+
+.dropdown-item:hover{
+
+    background:#F6F7F8;
+
+    color:#1F4D45;
+}
+
+
+/*===========================
+ Search
+============================*/
+
+.search-box{
+
+    display:flex;
+
+    align-items:center;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+    margin-right:18px;
+}
+
+.trekking-navbar.scrolled .search-box{
+
+    background:#F5F5F5;
+
+    border:none;
+}
+
+.search-box input{
+
+    width:170px;
+
+    border:none;
+
+    outline:none;
+
+    background:none;
+
+    color:white;
+
+    padding:12px 18px;
+}
+
+.trekking-navbar.scrolled .search-box input{
+
+    color:#202020;
+}
+
+.search-box input::placeholder{
+
+    color:rgba(255,255,255,.7);
+}
+
+.trekking-navbar.scrolled .search-box input::placeholder{
+
+    color:#777;
+}
+
+.search-box button{
+
+    border:none;
+
+    background:none;
+
+    width:48px;
+
+    color:white;
+
+    cursor:pointer;
+}
+
+.trekking-navbar.scrolled .search-box button{
+
+    color:#1F4D45;
+}
+
+
+/*===========================
+ Book Button
+============================*/
+
+.book-btn{
+
+    border:none;
+
+    padding:13px 30px;
+
+    border-radius:50px;
+
+    background:#C89B3C;
+
+    color:white;
+
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+    transition:.35s;
+}
+
+.book-btn:hover{
+
+    transform:translateY(-2px);
+
+    background:#b6892d;
+
+    box-shadow:0 15px 35px rgba(200,155,60,.35);
 }

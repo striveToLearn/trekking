@@ -1,16 +1,16 @@
-<nav class="navbar navbar-expand-lg trekking-navbar">
-  <div class="container-fluid px-4">
+<nav class="navbar navbar-expand-lg trekking-navbar fixed-top">
+
+  <div class="container-fluid px-lg-5 px-3">
 
     <!-- Logo -->
-    <a class="navbar-brand d-flex align-items-center" href="#">
-      <img 
+    <a class="navbar-brand d-flex align-items-center" href="/">
+      <img
         src="assets/trekking.com_logo.png"
         alt="Trekking.com"
         class="logo">
     </a>
 
-
-    <button 
+    <button
       class="navbar-toggler"
       type="button"
       data-bs-toggle="collapse"
@@ -20,21 +20,17 @@
 
     </button>
 
-
     <div class="collapse navbar-collapse" id="navbarMenu">
 
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav mx-auto">
 
         <li class="nav-item">
-          <a class="nav-link active" href="#">
-            Home
-          </a>
+          <a class="nav-link active" href="#">Home</a>
         </li>
-
 
         <li class="nav-item dropdown">
 
-          <a 
+          <a
             class="nav-link dropdown-toggle"
             href="#"
             data-bs-toggle="dropdown">
@@ -45,59 +41,52 @@
 
           <ul class="dropdown-menu">
 
-            <li>
-              <a class="dropdown-item" href="#">
-                Himalayan Treks
-              </a>
-            </li>
-
-            <li>
-              <a class="dropdown-item" href="#">
-                Weekend Treks
-              </a>
-            </li>
-
-            <li>
-              <a class="dropdown-item" href="#">
-                Adventure Tours
-              </a>
-            </li>
+            <li><a class="dropdown-item" href="#">Himalayan Treks</a></li>
+            <li><a class="dropdown-item" href="#">Weekend Treks</a></li>
+            <li><a class="dropdown-item" href="#">Adventure Tours</a></li>
 
           </ul>
 
         </li>
 
-
         <li class="nav-item">
-          <a class="nav-link" href="#">
-            Destinations
-          </a>
+          <a class="nav-link" href="#">Destinations</a>
         </li>
 
+        <li class="nav-item">
+          <a class="nav-link" href="#">Expeditions</a>
+        </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="#">
-            About
-          </a>
+          <a class="nav-link" href="#">About</a>
         </li>
 
       </ul>
 
+      <div class="d-flex align-items-center right-menu">
 
-      <div class="search-box">
+        <div class="search-box">
 
-        <input 
-          type="text"
-          placeholder="Search adventures...">
+          <input
+            type="text"
+            placeholder="Search Treks">
 
-        <button>
-          Search
+          <button>
+            <i class="bi bi-search"></i>
+          </button>
+
+        </div>
+
+        <button class="book-btn">
+
+          Book Now
+
         </button>
 
       </div>
 
-
     </div>
 
   </div>
+
 </nav>
