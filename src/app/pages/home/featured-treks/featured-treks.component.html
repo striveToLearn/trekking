@@ -1,0 +1,144 @@
+<section class="featured-section">
+
+<div class="container">
+
+
+    <!-- Header -->
+
+    <div class="section-header">
+
+
+        <span>
+            FEATURED EXPEDITIONS
+        </span>
+
+
+        <h2>
+            Beyond Trails.<br>
+            Beyond Limits.
+        </h2>
+
+
+        <p>
+            Discover breathtaking mountain journeys and unforgettable
+            Himalayan adventures.
+        </p>
+
+
+    </div>
+
+
+
+
+    <!-- Main Expedition -->
+
+    <div 
+    class="featured-expedition"
+    *ngFor="let trek of featuredTreks">
+
+
+        <img 
+        [src]="trek.image"
+        [alt]="trek.name">
+
+
+
+        <div class="overlay"></div>
+
+
+
+        <div class="expedition-content">
+
+
+            <span class="badge">
+                FEATURED TREK
+            </span>
+
+
+
+            <h3>
+                {{trek.name}}
+            </h3>
+
+
+
+            <p class="location">
+
+                {{trek.location}}
+
+            </p>
+
+
+
+
+            <div class="stats">
+
+
+                <div>
+
+                    <strong>
+                        {{trek.duration}}
+                    </strong>
+
+                    <small>
+                        Days
+                    </small>
+
+                </div>
+
+
+
+                <div>
+
+                    <strong>
+                        {{trek.altitude}}
+                    </strong>
+
+                    <small>
+                        Altitude
+                    </small>
+
+                </div>
+
+
+
+                <div>
+
+                    <strong>
+                        {{trek.rating}}
+                    </strong>
+
+                    <small>
+                        Rating
+                    </small>
+
+                </div>
+
+
+            </div>
+
+
+
+
+            <button>
+
+                Explore Expedition
+
+                →
+
+            </button>
+
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+</div>
+
+
+</section>

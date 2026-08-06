@@ -1,0 +1,137 @@
+<section class="trek-category-section">
+
+
+<div class="container">
+
+
+    <!-- Header -->
+
+    <div class="section-header">
+
+
+        <span>
+            EXPLORE ADVENTURES
+        </span>
+
+
+        <h2>
+            Choose Your<br>
+            Next Expedition
+        </h2>
+
+
+        <p>
+            From Himalayan trails to international summits,
+            discover adventures crafted for explorers.
+        </p>
+
+
+    </div>
+
+
+
+
+
+    <!-- Cards -->
+
+
+    <div class="trek-grid">
+
+
+
+        <div 
+        class="trek-card"
+        *ngFor="let trek of trekCategories">
+
+
+
+            <img
+            [src]="trek.image"
+            [alt]="trek.title">
+
+
+
+            <div class="overlay"></div>
+
+
+
+
+
+            <div class="card-content">
+
+
+                <div class="icon">
+
+                    {{trek.icon}}
+
+                </div>
+
+
+
+
+                <h3>
+
+                    {{trek.title}}
+
+                </h3>
+
+
+
+
+                <p>
+
+                    {{trek.subtitle}}
+
+                </p>
+
+
+
+
+                <div class="details">
+
+
+                    <span>
+
+                        {{trek.trekCount}}+ Trails
+
+                    </span>
+
+
+                    <span>
+
+                        {{trek.difficulty}}
+
+                    </span>
+
+
+                </div>
+
+
+
+
+                <button>
+
+                    Explore
+
+                    →
+
+                </button>
+
+
+
+            </div>
+
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+</div>
+
+
+</section>
