@@ -35,88 +35,57 @@
     <!-- Cards -->
 
 
-    <div class="trek-grid">
+   <div class="trek-carousel">
 
 
-
-        <div 
-        class="trek-card"
-        *ngFor="let trek of trekCategories">
-
+    <div 
+    class="trek-page"
+    *ngIf="trekCategories[currentIndex] as trek">
 
 
-            <img
+        <div class="page-image">
+
+            <img 
             [src]="trek.image"
             [alt]="trek.title">
 
-
-
-            <div class="overlay"></div>
-
+        </div>
 
 
 
 
-            <div class="card-content">
+        <div class="page-content">
 
 
-                <div class="icon">
-
-                    {{trek.icon}}
-
-                </div>
-
+            <span>
+                {{currentIndex + 1}} / {{trekCategories.length}}
+            </span>
 
 
 
-                <h3>
-
-                    {{trek.title}}
-
-                </h3>
+            <h3>
+                {{trek.title}}
+            </h3>
 
 
 
-
-                <p>
-
-                    {{trek.subtitle}}
-
-                </p>
+            <p>
+                {{trek.subtitle}}
+            </p>
 
 
 
-
-                <div class="details">
-
-
-                    <span>
-
-                        {{trek.trekCount}}+ Trails
-
-                    </span>
+            <div class="details">
 
 
-                    <span>
-
-                        {{trek.difficulty}}
-
-                    </span>
+                <span>
+                    {{trek.trekCount}}+ Trails
+                </span>
 
 
-                </div>
-
-
-
-
-                <button>
-
-                    Explore
-
-                    →
-
-                </button>
-
+                <span>
+                    {{trek.difficulty}}
+                </span>
 
 
             </div>
@@ -124,11 +93,49 @@
 
 
 
+            <button>
+                Explore Journey →
+            </button>
+
+
+
         </div>
 
 
+    </div>
+
+
+
+
+
+    <!-- PAGE CONTROLS -->
+
+
+    <div class="page-controls">
+
+
+        <button 
+        (click)="previousPage()">
+
+            ←
+
+        </button>
+
+
+
+        <button 
+        (click)="nextPage()">
+
+            →
+
+        </button>
+
 
     </div>
+
+
+
+</div>
 
 
 </div>

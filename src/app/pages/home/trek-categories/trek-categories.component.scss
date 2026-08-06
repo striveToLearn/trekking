@@ -1,101 +1,77 @@
 .trek-category-section {
 
+    padding:120px 0;
 
-padding:120px 0;
-
-background:#f5f3ed;
-
+    background:#f5f1e8;
 
 }
 
 
 
+/* ================= HEADER ================= */
 
-/* HEADER */
 
 .section-header {
 
 
-max-width:750px;
+    max-width:800px;
 
-margin-bottom:70px;
-
-
-
-span {
-
-
-font-size:13px;
-
-letter-spacing:4px;
-
-font-weight:700;
-
-color:#c99a3b;
-
-
-}
+    margin-bottom:80px;
 
 
 
+    span {
 
-h2 {
+        font-size:12px;
 
+        letter-spacing:5px;
 
-margin-top:20px;
+        font-weight:800;
 
+        color:#c99a3b;
 
-font-size:70px;
-
-line-height:1;
-
-
-font-weight:900;
-
-
-color:#172017;
+    }
 
 
 
-}
+    h2 {
+
+
+        margin-top:20px;
+
+
+        font-size:70px;
+
+
+        line-height:.95;
+
+
+        font-weight:900;
+
+
+        color:#172017;
+
+
+    }
 
 
 
-p {
+    p {
 
 
-margin-top:25px;
+        margin-top:25px;
 
 
-font-size:18px;
-
-color:#666;
+        font-size:18px;
 
 
-}
+        color:#666;
 
 
-}
+        max-width:600px;
 
 
-
-
-
-
-
-/* GRID */
-
-.trek-grid {
-
-
-display:grid;
-
-
-grid-template-columns:
-repeat(3,1fr);
-
-
-gap:30px;
+    }
 
 
 }
@@ -106,58 +82,27 @@ gap:30px;
 
 
 
-/* CARD */
-
-.trek-card {
 
 
-height:520px;
+/* ================= EXPEDITION BOOK CAROUSEL ================= */
 
 
-position:relative;
+.trek-carousel {
 
 
-overflow:hidden;
+    position:relative;
 
 
-border-radius:35px;
+    height:620px;
 
 
-cursor:pointer;
+    display:flex;
 
 
-
-box-shadow:
-
-0 20px 50px rgba(0,0,0,.12);
+    justify-content:center;
 
 
-
-img {
-
-
-height:100%;
-
-width:100%;
-
-object-fit:cover;
-
-
-transition:1s;
-
-
-}
-
-
-
-&:hover img {
-
-
-transform:scale(1.1);
-
-
-}
-
+    align-items:center;
 
 
 }
@@ -166,25 +111,85 @@ transform:scale(1.1);
 
 
 
-/* OVERLAY */
 
 
-.overlay {
+/* ================= BOOK PAGE ================= */
 
 
-position:absolute;
-
-inset:0;
+.trek-page {
 
 
-background:
+    position:absolute;
 
-linear-gradient(
-180deg,
-transparent 20%,
-rgba(0,0,0,.85)
-);
 
+    width:950px;
+
+
+    height:520px;
+
+
+    display:flex;
+
+
+    overflow:hidden;
+
+
+    background:#ffffff;
+
+
+    border-radius:25px;
+
+
+    box-shadow:
+
+    0 40px 90px rgba(0,0,0,.18);
+
+
+    transform:
+
+    rotate(-2deg);
+
+
+    transition:.6s ease;
+
+
+    animation:
+
+    pageFloat 6s infinite ease-in-out;
+
+
+}
+
+
+
+
+
+
+/* PAGE PAPER LAYERS */
+
+
+.trek-page::before {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    inset:18px;
+
+
+    background:#ebe3d4;
+
+
+    border-radius:25px;
+
+
+    z-index:-1;
+
+
+    transform:rotate(3deg);
 
 
 }
@@ -193,48 +198,39 @@ rgba(0,0,0,.85)
 
 
 
-/* CONTENT */
+.trek-page::after {
 
 
-.card-content {
+    content:"";
 
 
-position:absolute;
+    position:absolute;
 
 
-bottom:0;
+    top:0;
 
 
-padding:35px;
+    right:0;
 
 
-color:white;
+    width:80px;
 
 
-
-.icon {
-
-
-font-size:35px;
-
-margin-bottom:15px;
+    height:80px;
 
 
-}
+    background:#f5f1e8;
 
 
+    clip-path:polygon(
 
+        100% 0,
 
-h3 {
+        0 0,
 
+        100% 100%
 
-font-size:38px;
-
-
-font-weight:900;
-
-
-margin-bottom:10px;
+    );
 
 
 }
@@ -242,53 +238,315 @@ margin-bottom:10px;
 
 
 
-p {
 
 
-font-size:15px;
+
+.trek-page:hover {
 
 
-opacity:.85;
+    transform:
+
+    rotate(0deg)
+
+    translateY(-15px);
 
 
 }
 
 
 
+
+
+
+
+
+@keyframes pageFloat {
+
+
+    0% {
+
+
+        transform:rotate(-2deg);
+
+    }
+
+
+    50% {
+
+
+        transform:rotate(1deg);
+
+    }
+
+
+    100% {
+
+
+        transform:rotate(-2deg);
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ================= IMAGE SIDE ================= */
+
+
+.page-image {
+
+
+    width:55%;
+
+
+    height:100%;
+
+
+    position:relative;
+
+
+}
+
+
+
+
+
+.page-image::after {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    inset:0;
+
+
+    background:
+
+    linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        rgba(0,0,0,.25)
+
+    );
+
+
+}
+
+
+
+
+
+.page-image img {
+
+
+    width:100%;
+
+
+    height:100%;
+
+
+    object-fit:cover;
+
+
+}
+
+
+
+
+
+
+
+
+/* ================= CONTENT SIDE ================= */
+
+
+.page-content {
+
+
+    width:45%;
+
+
+    padding:55px;
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    justify-content:center;
+
+
+}
+
+
+
+
+
+
+
+.page-content > span {
+
+
+    font-size:12px;
+
+
+    letter-spacing:4px;
+
+
+    font-weight:800;
+
+
+    color:#c99a3b;
+
+
+}
+
+
+
+
+
+
+
+
+.page-content h3 {
+
+
+    font-size:52px;
+
+
+    line-height:1;
+
+
+    font-weight:900;
+
+
+    margin:25px 0 15px;
+
+
+    color:#172017;
+
+
+}
+
+
+
+
+
+
+
+
+.page-content p {
+
+
+    font-size:17px;
+
+
+    color:#666;
+
+
+    line-height:1.6;
+
+
+}
+
+.page-controls {
+
+
+    position:absolute;
+
+
+    bottom:20px;
+
+
+    display:flex;
+
+
+    gap:20px;
+
+
+}
+
+
+
+.page-controls button {
+
+
+    width:55px;
+
+    height:55px;
+
+
+    border-radius:50%;
+
+
+    border:none;
+
+
+    background:#172017;
+
+
+    color:white;
+
+
+    font-size:25px;
+
+
+    cursor:pointer;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+.page-controls button:hover {
+
+
+    background:#c99a3b;
+
+
+    transform:scale(1.1);
+
+
+}
+
+
+
+
+
+
+
+
+/* ================= DETAILS ================= */
 
 
 .details {
 
 
-display:flex;
-
-gap:12px;
-
-margin:25px 0;
+    display:flex;
 
 
-
-span {
-
-
-background:
-
-rgba(255,255,255,.18);
+    gap:12px;
 
 
-padding:8px 15px;
-
-
-border-radius:30px;
-
-
-font-size:13px;
-
-
-backdrop-filter:blur(10px);
-
-
-}
+    margin:30px 0;
 
 
 }
@@ -296,41 +554,25 @@ backdrop-filter:blur(10px);
 
 
 
-
-button {
-
-
-background:#d9a441;
-
-border:none;
+.details span {
 
 
-padding:13px 28px;
+    background:#f5f1e8;
 
 
-border-radius:40px;
+    color:#333;
 
 
-font-weight:700;
+    padding:10px 18px;
 
 
-color:#111;
+    border-radius:30px;
 
 
-transition:.3s;
+    font-size:13px;
 
 
-
-&:hover {
-
-
-transform:translateX(8px);
-
-
-}
-
-
-}
+    font-weight:600;
 
 
 }
@@ -342,32 +584,82 @@ transform:translateX(8px);
 
 
 
-/* RESPONSIVE */
+
+/* ================= BUTTON ================= */
+
+
+.page-content button {
+
+
+    width:max-content;
+
+
+    padding:15px 35px;
+
+
+    border:none;
+
+
+    border-radius:40px;
+
+
+    background:#172017;
+
+
+    color:white;
+
+
+    font-weight:700;
+
+
+    cursor:pointer;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+
+
+.page-content button:hover {
+
+
+    background:#c99a3b;
+
+
+    transform:translateX(8px);
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ================= MOBILE ================= */
 
 
 @media(max-width:1100px){
 
 
-.trek-grid {
+    .trek-page {
 
 
-grid-template-columns:
-repeat(2,1fr);
+        width:850px;
 
-
-}
-
-
-.section-header h2 {
-
-
-font-size:55px;
+    }
 
 
 }
 
 
-}
 
 
 
@@ -377,80 +669,97 @@ font-size:55px;
 @media(max-width:768px){
 
 
-.trek-grid {
+    .trek-category-section {
 
 
-grid-template-columns:1fr;
+        padding:80px 0;
 
-
-}
-
-
-
-.trek-card {
-
-
-height:450px;
-
-
-}
-
-
-
-.section-header h2 {
-
-
-font-size:42px;
-
-
-}
-
-
-}
+    }
 
 
 
 
-@media(max-width:480px){
+    .section-header h2 {
+
+
+        font-size:42px;
+
+    }
 
 
 
-.trek-category-section {
+
+    .trek-carousel {
 
 
-padding:80px 0;
+        height:750px;
 
-
-}
-
-
-
-.section-header h2 {
-
-
-font-size:36px;
-
-
-}
-
-
-.card-content {
-
-
-padding:25px;
+    }
 
 
 
-h3 {
 
 
-font-size:30px;
+    .trek-page {
 
 
-}
+        width:90%;
 
 
-}
+        height:auto;
+
+
+        min-height:650px;
+
+
+        flex-direction:column;
+
+
+    }
+
+
+
+
+
+    .page-image {
+
+
+        width:100%;
+
+
+        height:320px;
+
+
+    }
+
+
+
+
+
+
+    .page-content {
+
+
+        width:100%;
+
+
+        padding:35px;
+
+
+    }
+
+
+
+
+
+
+    .page-content h3 {
+
+
+        font-size:36px;
+
+
+    }
 
 
 }
