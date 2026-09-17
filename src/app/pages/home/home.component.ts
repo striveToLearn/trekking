@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
+trekCategoriesLoaded = false;
+featuredTreksLoaded = false;
+loadTrekCategories(): void {
+  this.trekCategoriesLoaded = true;
+}
 
+loadFeaturedTreks(): void {
+  this.featuredTreksLoaded = true;
+}
 }

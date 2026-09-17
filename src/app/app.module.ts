@@ -8,6 +8,7 @@ import { HeroComponent } from './pages/home/hero/hero.component';
 import { TopbarComponent } from './shared/topbar/topbar.component';
 import { TrekCategoriesComponent } from './pages/home/trek-categories/trek-categories.component';
 import { FeaturedTreksComponent } from './pages/home/featured-treks/featured-treks.component';
+import { LazySectionDirective } from './shared/directives/lazy-section.directive';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { FeaturedTreksComponent } from './pages/home/featured-treks/featured-tre
     HeroComponent,
     TopbarComponent,
     TrekCategoriesComponent,
-    FeaturedTreksComponent
+    FeaturedTreksComponent,
+    LazySectionDirective
   ],
   imports: [
     BrowserModule,

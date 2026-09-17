@@ -1,4 +1,23 @@
 <app-topbar></app-topbar>
+
 <app-hero></app-hero>
-<app-trek-categories></app-trek-categories>
-<app-featured-treks></app-featured-treks>
+
+<section
+  class="lazy-section"
+  appLazySection
+  (sectionVisible)="loadTrekCategories()"
+>
+  <ng-container *ngIf="trekCategoriesLoaded">
+    <app-trek-categories></app-trek-categories>
+  </ng-container>
+</section>
+
+<section
+  class="lazy-section"
+  appLazySection
+  (sectionVisible)="loadFeaturedTreks()"
+>
+  <ng-container *ngIf="featuredTreksLoaded">
+    <app-featured-treks></app-featured-treks>
+  </ng-container>
+</section>
