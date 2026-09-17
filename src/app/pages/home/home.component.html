@@ -2,9 +2,13 @@
 
 <app-hero></app-hero>
 
+
+<!-- TREK CATEGORIES -->
+
 <section
-  class="lazy-section"
+  class="lazy-section scroll-reveal"
   appLazySection
+  appScrollReveal
   (sectionVisible)="loadTrekCategories()"
 >
   <ng-container *ngIf="trekCategoriesLoaded">
@@ -12,9 +16,13 @@
   </ng-container>
 </section>
 
+
+<!-- FEATURED TREKS -->
+
 <section
-  class="lazy-section"
+  class="lazy-section scroll-reveal"
   appLazySection
+  appScrollReveal
   (sectionVisible)="loadFeaturedTreks()"
 >
   <ng-container *ngIf="featuredTreksLoaded">

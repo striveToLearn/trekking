@@ -8,11 +8,15 @@ import { Component } from '@angular/core';
 export class HomeComponent {
 trekCategoriesLoaded = false;
 featuredTreksLoaded = false;
+
+
 loadTrekCategories(): void {
+  console.log('Loading Trek Categories...');
   this.trekCategoriesLoaded = true;
 }
 
 loadFeaturedTreks(): void {
+  console.log('Loading Featured Treks...');
   this.featuredTreksLoaded = true;
 }
 }

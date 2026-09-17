@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TopbarComponent } from './topbar/topbar.component';
-import { LazySectionDirective } from './directives/lazy-section.directive';
+import { ScrollRevealDirective } from './directives/scroll-reveal.directive';
+
 
 
 
@@ -9,7 +10,7 @@ import { LazySectionDirective } from './directives/lazy-section.directive';
 @NgModule({
   declarations: [
     TopbarComponent,
-    LazySectionDirective
+    ScrollRevealDirective,
   ],
   imports: [
     CommonModule,
