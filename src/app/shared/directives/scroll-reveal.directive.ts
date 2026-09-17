@@ -14,38 +14,35 @@ export class ScrollRevealDirective
   private observer?: IntersectionObserver;
 
   constructor(
-    private elementRef: ElementRef
+    private elementRef: ElementRef<HTMLElement>
   ) {}
 
   ngAfterViewInit(): void {
 
+    // Fallback for browsers without IntersectionObserver support
+    if (!('IntersectionObserver' in window)) {
+      this.elementRef.nativeElement.classList.add('is-visible');
+      return;
+    }
+
     this.observer = new IntersectionObserver(
-      entries => {
+      (entries) => {
 
-        entries.forEach(entry => {
+        const entry = entries[0];
 
-          if (entry.isIntersecting) {
+        if (!entry?.isIntersecting) {
+          return;
+        }
 
-            console.log(
-              '[ScrollReveal] Section visible:',
-              entry.target
-            );
+        this.elementRef.nativeElement.classList.add('is-visible');
 
-            entry.target.classList.add('is-visible');
-
-            console.log(
-              '[ScrollReveal] Added is-visible'
-            );
-
-            this.observer?.unobserve(entry.target);
-          }
-
-        });
-
+        // Animate only once
+        this.observer?.unobserve(entry.target);
       },
       {
-        threshold: 0.15,
-        rootMargin: '0px 0px -80px 0px'
+        root: null,
+        rootMargin: '0px 0px -80px 0px',
+        threshold: 0.15
       }
     );
 
@@ -55,7 +52,7 @@ export class ScrollRevealDirective
   }
 
   ngOnDestroy(): void {
-
     this.observer?.disconnect();
+    this.observer = undefined;
   }
 }

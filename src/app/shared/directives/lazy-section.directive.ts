@@ -18,62 +18,34 @@ export class LazySectionDirective
   private observer?: IntersectionObserver;
 
   constructor(
-    private elementRef: ElementRef
-  ) {
-    console.log(
-      '🟡 [LazySection] Directive created:',
-      this.elementRef.nativeElement
-    );
-  }
+    private elementRef: ElementRef<HTMLElement>
+  ) {}
 
   ngAfterViewInit(): void {
 
-    console.log(
-      '🔵 [LazySection] ngAfterViewInit:',
-      this.elementRef.nativeElement
-    );
+    // Fallback for browsers without IntersectionObserver support
+    if (!('IntersectionObserver' in window)) {
+      this.sectionVisible.emit();
+      return;
+    }
 
     this.observer = new IntersectionObserver(
       (entries) => {
 
-        entries.forEach(entry => {
+        const entry = entries[0];
 
-          console.log(
-            '👀 [LazySection] Intersection detected:',
-            {
-              element: entry.target,
-              isIntersecting: entry.isIntersecting,
-              ratio: entry.intersectionRatio
-            }
-          );
+        if (!entry?.isIntersecting) {
+          return;
+        }
 
-          if (entry.isIntersecting) {
+        this.sectionVisible.emit();
 
-            console.log(
-              '🟢 [LazySection] SECTION VISIBLE!'
-            );
-
-            this.sectionVisible.emit();
-
-            console.log(
-              '🚀 [LazySection] sectionVisible emitted'
-            );
-
-            this.observer?.unobserve(
-              entry.target
-            );
-
-          }
-
-        });
-
+        // The section only needs to be detected once
+        this.observer?.unobserve(entry.target);
       },
       {
         root: null,
-
-        // For testing, use 0 first
-        rootMargin: '0px',
-
+        rootMargin: '500px 0px',
         threshold: 0
       }
     );
@@ -81,19 +53,10 @@ export class LazySectionDirective
     this.observer.observe(
       this.elementRef.nativeElement
     );
-
-    console.log(
-      '🔎 [LazySection] Now observing:',
-      this.elementRef.nativeElement
-    );
   }
 
   ngOnDestroy(): void {
-
-    console.log(
-      '🔴 [LazySection] Directive destroyed'
-    );
-
     this.observer?.disconnect();
+    this.observer = undefined;
   }
 }
