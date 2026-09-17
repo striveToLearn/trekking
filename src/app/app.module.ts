@@ -9,6 +9,8 @@ import { TrekCategoriesComponent } from './pages/home/trek-categories/trek-categ
 import { FeaturedTreksComponent } from './pages/home/featured-treks/featured-treks.component';
 import { LazySectionDirective } from './shared/directives/lazy-section.directive';
 import { ScrollRevealDirective } from './shared/directives/scroll-reveal.directive';
+import { CountUpDirective } from './shared/directives/count-up.directive';
+
 
 
 
@@ -21,12 +23,13 @@ import { ScrollRevealDirective } from './shared/directives/scroll-reveal.directi
     TrekCategoriesComponent,
     FeaturedTreksComponent,
     LazySectionDirective,
-    ScrollRevealDirective
+    CountUpDirective,
+    ScrollRevealDirective,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
-  ],
+    AppRoutingModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
