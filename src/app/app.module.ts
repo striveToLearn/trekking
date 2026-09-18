@@ -10,6 +10,7 @@ import { FeaturedTreksComponent } from './pages/home/featured-treks/featured-tre
 import { LazySectionDirective } from './shared/directives/lazy-section.directive';
 import { ScrollRevealDirective } from './shared/directives/scroll-reveal.directive';
 import { CountUpDirective } from './shared/directives/count-up.directive';
+import { FooterComponent } from './shared/footer/footer.component';
 
 
 
@@ -20,6 +21,7 @@ import { CountUpDirective } from './shared/directives/count-up.directive';
     HomeComponent,
     HeroComponent,
     TopbarComponent,
+    FooterComponent,
     TrekCategoriesComponent,
     FeaturedTreksComponent,
     LazySectionDirective,

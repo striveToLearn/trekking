@@ -41,7 +41,7 @@ export class TrekCategoriesComponent {
       id:2,
       title:"Weekend Escapes",
       subtitle:"Short adventures near you",
-      image:"assets/images/treks/weekend.jpg",
+      image:"assets/weekend_escapes.jpg",
       trekCount:45,
       difficulty:"Easy",
       icon:"🥾"
@@ -52,7 +52,7 @@ export class TrekCategoriesComponent {
       id:3,
       title:"High Altitude",
       subtitle:"Above the clouds",
-      image:"assets/images/treks/high-altitude.jpg",
+      image:"assets/high_altitude_treks.jpg",
       trekCount:80,
       difficulty:"Hard",
       icon:"⛰"
@@ -63,7 +63,7 @@ export class TrekCategoriesComponent {
       id:4,
       title:"Wild Trails",
       subtitle:"Into the wilderness",
-      image:"assets/images/treks/wildlife.jpg",
+      image:"assets/wild_trails.jpg",
       trekCount:35,
       difficulty:"Easy",
       icon:"🌲"
@@ -74,7 +74,7 @@ export class TrekCategoriesComponent {
       id:5,
       title:"Backpacking",
       subtitle:"Discover hidden paths",
-      image:"assets/images/treks/backpacking.jpg",
+      image:"assets/hidden_trail.jpg",
       trekCount:60,
       difficulty:"Moderate",
       icon:"🎒"
@@ -85,7 +85,7 @@ export class TrekCategoriesComponent {
       id:6,
       title:"International",
       subtitle:"Beyond Indian mountains",
-      image:"assets/images/treks/international.jpg",
+      image:"assets/international_trail.jpg",
       trekCount:25,
       difficulty:"Hard",
       icon:"🌎"
